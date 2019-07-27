@@ -3,8 +3,8 @@ import NewsItem from './NewsItem';
 
 const News = ({ news }) => (
   <div className='row'>
-    {news.map(newitem => (
-      <NewsItem key={newitem.url} newitem={newitem} />
+    {news.map(newsitem => (
+      <NewsItem key={newsitem.url} newsitem={newsitem} />
     ))}
   </div>
 );
