@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    notices: []
+  };
+
+  componentDidMount() {
+    this.checkNews();
+  }
+
+  checkNews = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=ar&category=business&apiKey=cd8df82dc9c94ffa807cebb6882907e8`;
+
+    const response = await fetch(url);
+    const notices = await response.json();
+
+    this.setState({ notices: notices.articles });
+  };
+
+  render() {
+    return <h1>Noticias React API</h1>;
+  }
 }
 
 export default App;
