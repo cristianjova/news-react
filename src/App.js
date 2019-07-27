@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import Header from './components/layouts/Header';
+import News from './components/news/News';
 
 class App extends Component {
   state = {
-    notices: []
+    news: []
   };
 
   componentDidMount() {
@@ -13,13 +15,21 @@ class App extends Component {
     const url = `https://newsapi.org/v2/top-headlines?country=ar&category=business&apiKey=cd8df82dc9c94ffa807cebb6882907e8`;
 
     const response = await fetch(url);
-    const notices = await response.json();
+    const news = await response.json();
 
-    this.setState({ notices: notices.articles });
+    this.setState({ news: news.articles });
   };
 
   render() {
-    return <h1>Noticias React API</h1>;
+    return (
+      <Fragment>
+        <Header title='Noticias React API' />
+
+        <div className='container white news-container'>
+          <News news={this.state.news} />
+        </div>
+      </Fragment>
+    );
   }
 }
 
