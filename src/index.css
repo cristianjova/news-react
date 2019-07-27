@@ -20,12 +20,12 @@ body {
   margin-top: 3rem;
 }
 
-.buscador {
+.browser {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: left;
 }
-.buscador label {
+.browser label {
   font-size: 2rem;
   color: black;
 }

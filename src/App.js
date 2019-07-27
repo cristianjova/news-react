@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Header from './components/layouts/Header';
 import News from './components/news/News';
+import Browser from './components/layouts/Browser';
 
 class App extends Component {
   state = {
@@ -26,6 +27,8 @@ class App extends Component {
         <Header title='Noticias React API' />
 
         <div className='container white news-container'>
+          <Browser />
+
           <News news={this.state.news} />
         </div>
       </Fragment>
