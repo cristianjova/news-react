@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Browser extends Component {
   state = {
@@ -42,5 +43,9 @@ class Browser extends Component {
     );
   }
 }
+
+Browser.propTypes = {
+  checkNews: PropTypes.func.isRequired
+};
 
 export default Browser;
