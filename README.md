@@ -1,4 +1,4 @@
-# notices-react
+# news-react
 News search engine using News API
 
 ## Built With
