@@ -2,11 +2,15 @@ import React from 'react';
 
 const Header = ({ title }) => {
   return (
-    <nav className='nav-wrapper light-blue darken-3'>
-      <button href='#' className='brand-logo btn-flat center'>
-        {title}
-      </button>
-    </nav>
+    <div className='navbar-fixed '>
+      <nav>
+        <div className='nav-wrapper light-blue darken-3'>
+          <a href='#!' className='brand-logo center'>
+            {title}
+          </a>
+        </div>
+      </nav>
+    </div>
   );
 };
 

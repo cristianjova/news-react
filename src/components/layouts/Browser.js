@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
 
 class Browser extends Component {
-  state = {};
+  state = {
+    category: 'general'
+  };
+
+  onChange = e => {
+    // Segundo parametro, callback-> función
+    this.setState(
+      {
+        category: e.target.value
+      },
+      () => {
+        // Pasar a la pagina principal
+        this.props.checkNews(this.state.category);
+      }
+    );
+  };
 
   render() {
     return (
       <div className='browser row'>
-        <div className='col s12 m8 offset-2'>
+        <div className='col s12 m8 offset-m2'>
           <form>
             <h2>Ver Noticias por Categoría</h2>
 
-            <div className='input-field col s12 m8'>
-              <select>
+            <div className='input-field col s12 m8 offset-m2'>
+              <select onChange={this.onChange}>
                 <option value='general'>General</option>
                 <option value='technology'>Tecnología</option>
                 <option value='sports'>Deportes</option>
