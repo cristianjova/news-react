@@ -5,7 +5,7 @@ const Header = ({ title }) => {
   return (
     <div className='navbar-fixed '>
       <nav>
-        <div className='nav-wrapper light-blue darken-3'>
+        <div className='nav-wrapper grey darken-3'>
           <a href='#!' className='brand-logo center'>
             {title}
           </a>

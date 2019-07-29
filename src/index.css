@@ -5,11 +5,9 @@ body {
 }
 
 body {
-  background-color: #039be5;
+  background-color: #ddd;
 }
-.card-content h3 {
-  font-size: 1.4rem;
-}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -68,4 +66,27 @@ h2 {
   opacity: 0;
   transition: all 0.5s ease-in;
   transform: scale(1);
+}
+
+.card.large .card-image {
+  max-height: 55%;
+  overflow: hidden;
+}
+
+.card .card-content {
+  padding: 0 10px;
+}
+
+.card .card-action {
+  padding: 6px 24px;
+}
+
+.card-content h3 {
+  font-size: 1.3rem;
+}
+
+.text-content {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
