@@ -25,11 +25,11 @@ const NewsItem = ({ newsitem }) => {
   return (
     <Fragment>
       <div className='col m12 hide-on-small-only hide-on-large-only'>
-        <div class='card horizontal'>
-          <div class='card-image'>{image}</div>
-          <div class='card-stacked'>
-            <div class='card-content'>
-              <h3>{title}</h3>
+        <div className='card horizontal'>
+          <div className='card-image'>{image}</div>
+          <div className='card-stacked'>
+            <div className='card-content'>
+              <h6>{title}</h6>
               <p>{description}</p>
             </div>
             <div className='card-action'>
@@ -50,8 +50,10 @@ const NewsItem = ({ newsitem }) => {
           {image}
 
           <div className='card-content'>
-            <h3>{title}</h3>
-            <p>{description}</p>
+            <h6>{title}</h6>
+            <div className='text-content'>
+              <p>{description}</p>
+            </div>
           </div>
 
           <div className='card-action'>
@@ -68,10 +70,12 @@ const NewsItem = ({ newsitem }) => {
       </div>
 
       <div className='col l6 hide-on-med-and-down'>
-        <div class='card hoverable large'>
+        <div className='card hoverable large'>
           {image}
-          <div class='card-content'>
-            <h3>{title}</h3>
+          <div className='card-content'>
+            <div className='text-content-title'>
+              <h6>{title}</h6>
+            </div>
             <div className='text-content'>
               <p>{description}</p>
             </div>

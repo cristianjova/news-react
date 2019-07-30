@@ -41,6 +41,18 @@ h2 {
   text-align: center;
 }
 
+h4 {
+  font-family: 'Raleway', 'sans-serif';
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  line-height: 50%;
+  margin: 0.912rem auto 0.912rem auto;
+}
+
+h6 {
+  font-family: 'Raleway', 'sans-serif';
+}
+
 .card-action .btn {
   width: 100%;
 }
@@ -86,7 +98,23 @@ h2 {
 }
 
 .text-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.text-content-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (max-width: 600px) {
+  nav .brand-logo {
+    font-size: 1.5rem;
+  }
 }

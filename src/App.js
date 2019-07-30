@@ -12,13 +12,20 @@ class App extends Component {
     this.checkNews();
   }
 
-  checkNews = async (category = 'general') => {
-    const url = `https://newsapi.org/v2/top-headlines?country=ar&category=${category}&apiKey=cd8df82dc9c94ffa807cebb6882907e8`;
+  checkNews = async (category = 'general', search = '') => {
+    if (search === '') {
+      const url = `https://newsapi.org/v2/top-headlines?country=ar&category=${category}&apiKey=cd8df82dc9c94ffa807cebb6882907e8`;
+      const response = await fetch(url);
+      const news = await response.json();
 
-    const response = await fetch(url);
-    const news = await response.json();
+      this.setState({ news: news.articles });
+    } else {
+      const url = `https://newsapi.org/v2/everything?q=${search}&language=es&sortBy=publishedAt&apiKey=cd8df82dc9c94ffa807cebb6882907e8`;
+      const response = await fetch(url);
+      const news = await response.json();
 
-    this.setState({ news: news.articles });
+      this.setState({ news: news.articles });
+    }
   };
 
   render() {
@@ -27,7 +34,21 @@ class App extends Component {
         <Header title='Noticias React API' />
 
         <div className='container white news-container'>
-          <Browser checkNews={this.checkNews} />
+          <div className='hide-on-med-and-up'>
+            <ul className='collapsible'>
+              <li>
+                <div className='collapsible-header'>
+                  <h4 className='center'>Filtros</h4>
+                </div>
+                <div className='collapsible-body'>
+                  <Browser checkNews={this.checkNews} />
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div className='hide-on-small-only'>
+            <Browser checkNews={this.checkNews} />
+          </div>
 
           <News news={this.state.news} />
         </div>

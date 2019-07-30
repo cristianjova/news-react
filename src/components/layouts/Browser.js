@@ -3,18 +3,19 @@ import PropTypes from 'prop-types';
 
 class Browser extends Component {
   state = {
-    category: 'general'
+    category: 'general',
+    search: ''
   };
 
   onChange = e => {
     // Segundo parametro, callback-> función
     this.setState(
       {
-        category: e.target.value
+        [e.target.name]: e.target.value
       },
       () => {
         // Pasar a la pagina principal
-        this.props.checkNews(this.state.category);
+        this.props.checkNews(this.state.category, this.state.search);
       }
     );
   };
@@ -25,10 +26,12 @@ class Browser extends Component {
         <div className='col s12'>
           <form>
             <div className='col m6'>
-              <h2>Ver Noticias por Categoría</h2>
-
+              <h2 className='hide-on-small-only'>Ver Noticias por Categoría</h2>
+              <h6 className='hide-on-med-and-up center-align'>
+                Ver Noticias por Categoría
+              </h6>
               <div className='input-field col s12'>
-                <select onChange={this.onChange}>
+                <select onChange={this.onChange} name='category'>
                   <option value='general'>General</option>
                   <option value='technology'>Tecnología</option>
                   <option value='sports'>Deportes</option>
@@ -41,13 +44,19 @@ class Browser extends Component {
             </div>
 
             <div className='col m6'>
-              <h2>Buscar un tema en especifico</h2>
+              <h2 className='hide-on-small-only'>
+                Buscar un tema en especifico
+              </h2>
+              <h6 className='hide-on-med-and-up center-align'>
+                Buscar un tema en especifico
+              </h6>
               <div className='input-field col s12'>
                 <input
                   type='text'
                   name='search'
-                  placeholder='Buscar un tema especifico'
+                  placeholder='Buscar'
                   className='validate'
+                  onChange={this.onChange}
                 />
               </div>
             </div>
