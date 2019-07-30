@@ -38,7 +38,8 @@ class App extends Component {
             <ul className='collapsible'>
               <li>
                 <div className='collapsible-header'>
-                  <h4 className='center'>Filtros</h4>
+                  <i className='fas fa-bars' />
+                  <span>Menu</span>
                 </div>
                 <div className='collapsible-body'>
                   <Browser checkNews={this.checkNews} />
