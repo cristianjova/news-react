@@ -22,6 +22,21 @@ const NewsItem = ({ newsitem }) => {
     </div>
   ) : null;
 
+  const cardContentLarge = description ? (
+    <div className='card-content'>
+      <div className='text-content-title'>
+        <h5>{title}</h5>
+      </div>
+      <div className='text-content'>
+        <p>{description}</p>
+      </div>
+    </div>
+  ) : (
+    <div className='card-content'>
+      <h5>{title}</h5>
+    </div>
+  );
+
   return (
     <Fragment>
       <div className='col m12 hide-on-small-only hide-on-large-only'>
@@ -29,7 +44,7 @@ const NewsItem = ({ newsitem }) => {
           <div className='card-image'>{image}</div>
           <div className='card-stacked'>
             <div className='card-content'>
-              <h6>{title}</h6>
+              <h5>{title}</h5>
               <p>{description}</p>
             </div>
             <div className='card-action'>
@@ -50,7 +65,7 @@ const NewsItem = ({ newsitem }) => {
           {image}
 
           <div className='card-content'>
-            <h6>{title}</h6>
+            <h5>{title}</h5>
             <div className='text-content'>
               <p>{description}</p>
             </div>
@@ -72,14 +87,7 @@ const NewsItem = ({ newsitem }) => {
       <div className='col l6 hide-on-med-and-down'>
         <div className='card hoverable large'>
           {image}
-          <div className='card-content'>
-            <div className='text-content-title'>
-              <h6>{title}</h6>
-            </div>
-            <div className='text-content'>
-              <p>{description}</p>
-            </div>
-          </div>
+          {cardContentLarge}
           <div className='card-action'>
             <a
               href={url}
