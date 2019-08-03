@@ -13,7 +13,7 @@ body {
   flex-wrap: wrap;
 }
 .news-container {
-  padding: 1rem;
+  padding: 1rem 0.5rem;
   border-radius: 1rem;
   margin-top: 3rem;
 }
@@ -65,7 +65,7 @@ h5 {
 
 h6 {
   font-family: 'Raleway', 'sans-serif';
-  color: #00ee8c;
+  color: #182c38;
 }
 
 .card-action .btn {
@@ -136,7 +136,6 @@ h6 {
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  height: 100px;
   margin-bottom: 5px;
 }
 

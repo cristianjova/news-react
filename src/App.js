@@ -34,18 +34,22 @@ class App extends Component {
         <Header title='Noticias React API' />
 
         <div className='container white news-container'>
-          <div className='hide-on-med-and-up'>
-            <ul className='collapsible'>
-              <li>
-                <div className='collapsible-header'>
-                  <i className='fas fa-bars' />
-                  <span>Menu</span>
-                </div>
-                <div className='collapsible-body'>
-                  <Browser checkNews={this.checkNews} />
-                </div>
-              </li>
-            </ul>
+          <div className='row'>
+            <div className='col s12'>
+              <div className='hide-on-med-and-up'>
+                <ul className='collapsible'>
+                  <li>
+                    <div className='collapsible-header'>
+                      <i className='fas fa-bars' />
+                      <span>MENU</span>
+                    </div>
+                    <div className='collapsible-body'>
+                      <Browser checkNews={this.checkNews} />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           <div className='hide-on-small-only'>
             <Browser checkNews={this.checkNews} />

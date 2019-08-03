@@ -24,9 +24,7 @@ const NewsItem = ({ newsitem }) => {
 
   const cardContentLarge = description ? (
     <div className='card-content'>
-      <div className='text-content-title'>
-        <h5>{title}</h5>
-      </div>
+      <h5 className='text-content-title'>{title}</h5>
       <div className='text-content'>
         <p>{description}</p>
       </div>
@@ -40,7 +38,7 @@ const NewsItem = ({ newsitem }) => {
   return (
     <Fragment>
       <div className='col m12 hide-on-small-only hide-on-large-only'>
-        <div className='card horizontal'>
+        <div className='card horizontal hoverable mb-2'>
           <div className='card-image'>{image}</div>
           <div className='card-stacked'>
             <div className='card-content'>
